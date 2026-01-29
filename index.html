@@ -3,22 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Young Innovators Center Ltd - Empowering Young Minds Through Code</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <title>OMEGA Academy - Transform Your Future</title>
     <style>
-        :root {
-            --primary: #00D9FF;
-            --secondary: #FF3D71;
-            --accent: #FFD93D;
-            --dark: #0A0E27;
-            --light: #F8FAFC;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -26,9 +12,9 @@
         }
 
         body {
-            font-family: 'Outfit', sans-serif;
-            background: var(--dark);
-            color: var(--light);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0d1f0d;
+            color: #fff;
             overflow-x: hidden;
         }
 
@@ -36,55 +22,50 @@
         nav {
             position: fixed;
             top: 0;
-            width: 100%;
-            background: rgba(10, 14, 39, 0.95);
+            left: 0;
+            right: 0;
+            background: rgba(13, 31, 13, 0.95);
             backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(220, 38, 38, 0.3);
+            padding: 20px 0;
             z-index: 1000;
-            padding: 1.5rem 5%;
-            border-bottom: 2px solid var(--primary);
-            animation: slideDown 0.8s ease-out;
         }
 
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        nav .container {
+        .nav-container {
             max-width: 1400px;
             margin: 0 auto;
+            padding: 0 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 24px;
             font-weight: 800;
-            background: var(--gradient-3);
+            background: linear-gradient(135deg, #dc2626 0%, #16a34a 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            cursor: pointer;
         }
 
         .nav-links {
             display: flex;
-            gap: 2.5rem;
-            list-style: none;
+            gap: 40px;
+            align-items: center;
         }
 
         .nav-links a {
-            color: var(--light);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            font-weight: 500;
+            transition: all 0.3s;
             position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #dc2626;
         }
 
         .nav-links a::after {
@@ -93,21 +74,57 @@
             bottom: -5px;
             left: 0;
             width: 0;
-            height: 3px;
-            background: var(--primary);
-            transition: width 0.3s ease;
+            height: 2px;
+            background: linear-gradient(135deg, #dc2626, #16a34a);
+            transition: width 0.3s;
         }
 
         .nav-links a:hover::after {
             width: 100%;
         }
 
+        .nav-cta {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(220, 38, 38, 0.5);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(220, 38, 38, 0.1);
+        }
+
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            min-height: calc(100vh - 80px);
             display: flex;
             align-items: center;
-            padding: 8rem 5% 4rem;
             position: relative;
             overflow: hidden;
         }
@@ -115,502 +132,931 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(0, 217, 255, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 61, 113, 0.15) 0%, transparent 50%);
-            z-index: 0;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(220, 38, 38, 0.15), transparent);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            animation: pulse 8s infinite;
         }
 
-        .hero .container {
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .hero-container {
             max-width: 1400px;
             margin: 0 auto;
+            padding: 20px 40px 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
             position: relative;
             z-index: 1;
         }
 
-        .hero-content {
-            max-width: 600px;
-            animation: fadeInUp 1s ease-out 0.3s both;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
+        .hero-content h1 {
+            font-size: 64px;
+            font-weight: 900;
             line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .hero p {
-            font-size: 1.3rem;
+        .hero-content .highlight {
+            background: linear-gradient(135deg, #dc2626 0%, #16a34a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
             line-height: 1.6;
-            margin-bottom: 2.5rem;
-            color: rgba(248, 250, 252, 0.8);
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: var(--gradient-3);
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            font-size: 1.1rem;
-            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 217, 255, 0.5);
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 60px;
         }
 
-        /* Section Styles */
-        section {
-            padding: 6rem 5%;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 3rem;
+        .stat-item {
             text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #dc2626, #16a34a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .hero-visual {
             position: relative;
         }
 
-        h2::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 5px;
-            background: var(--gradient-3);
-            margin: 1rem auto 0;
-            border-radius: 3px;
-        }
-
-        /* Programs Section */
-        #programs {
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .programs-grid {
+        .course-cards-float {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
-        .program-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(0, 217, 255, 0.2);
-            border-radius: 20px;
-            padding: 2.5rem;
-            transition: all 0.4s ease;
+        .float-card {
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(22, 163, 74, 0.1));
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .float-card:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        .float-card:nth-child(3) {
+            animation-delay: 2s;
+        }
+
+        .float-card:nth-child(4) {
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .float-card-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+
+        .float-card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .float-card p {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Welcome Section */
+        .welcome-section {
+            margin-top: 80px;
+            padding: 100px 40px 20px;
+            background: linear-gradient(180deg, rgba(22, 163, 74, 0.05), rgba(220, 38, 38, 0.05));
+        }
+
+        .welcome-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 60px;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+            border-radius: 30px;
+            padding: 60px;
             position: relative;
             overflow: hidden;
         }
 
-        .program-card::before {
+        .welcome-container::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-3);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(22, 163, 74, 0.1), transparent);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
         }
 
-        .program-card:hover::before {
-            opacity: 0.1;
-        }
-
-        .program-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 50px rgba(0, 217, 255, 0.3);
-        }
-
-        .program-card > * {
+        .owner-image-container {
             position: relative;
             z-index: 1;
         }
 
-        .program-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
+        .owner-image {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 3px solid rgba(220, 38, 38, 0.5);
+            box-shadow: 0 20px 60px rgba(220, 38, 38, 0.3);
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.2), rgba(22, 163, 74, 0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
         }
 
-        .program-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
+        .welcome-content {
+            position: relative;
+            z-index: 1;
         }
 
-        .program-card p {
-            color: rgba(248, 250, 252, 0.8);
+        .welcome-label {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(220, 38, 38, 0.2);
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #dc2626;
+            margin-bottom: 20px;
+        }
+
+        .welcome-content h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.8) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .welcome-message {
+            font-size: 18px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+            padding: 20px;
+            border-left: 4px solid #dc2626;
+            background: rgba(220, 38, 38, 0.05);
+            border-radius: 0 12px 12px 0;
+        }
+
+        .owner-name {
+            margin-top: 20px;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .owner-name strong {
+            color: #16a34a;
+            font-weight: 700;
+        }
+
+        /* Featured Courses Section */
+        .featured-section {
+            padding: 120px 40px;
+            background: linear-gradient(180deg, transparent, rgba(220, 38, 38, 0.03));
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+
+        .course-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(220, 38, 38, 0.5);
+            box-shadow: 0 20px 60px rgba(220, 38, 38, 0.2);
+        }
+
+        .course-thumbnail {
+            height: 200px;
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.3), rgba(22, 163, 74, 0.3));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-thumbnail::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .course-card:hover .course-thumbnail::before {
+            transform: translateX(100%);
+        }
+
+        .course-content {
+            padding: 24px;
+        }
+
+        .course-meta {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .meta-badge {
+            padding: 6px 12px;
+            background: rgba(220, 38, 38, 0.2);
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #dc2626;
+        }
+
+        .course-content h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .course-content p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            margin-bottom: 20px;
             line-height: 1.6;
         }
 
-        /* Gallery Section */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+        .course-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .gallery-item {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            aspect-ratio: 4/3;
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(0, 217, 255, 0.2);
-            transition: all 0.4s ease;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-            border-color: var(--primary);
-            box-shadow: 0 15px 40px rgba(0, 217, 255, 0.4);
-        }
-
-        .gallery-placeholder {
-            width: 100%;
-            height: 100%;
+        .course-instructor {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            background: var(--gradient-1);
-            opacity: 0.8;
+            gap: 8px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
         }
 
-        .gallery-item:nth-child(2) .gallery-placeholder {
-            background: var(--gradient-2);
+        .course-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #16a34a;
         }
 
-        .gallery-item:nth-child(3) .gallery-placeholder {
-            background: var(--gradient-3);
+        .course-price.free {
+            color: #dc2626;
         }
 
-        .gallery-item:nth-child(4) .gallery-placeholder {
-            background: var(--gradient-1);
-        }
-
-        .gallery-item:nth-child(5) .gallery-placeholder {
-            background: var(--gradient-2);
-        }
-
-        .gallery-item:nth-child(6) .gallery-placeholder {
-            background: var(--gradient-3);
-        }
-
-        /* About Section */
-        #about {
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .about-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about-content p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: rgba(248, 250, 252, 0.8);
-            margin-bottom: 2rem;
+        /* Stats Section */
+        .stats-section {
+            padding: 100px 40px;
+            background: rgba(220, 38, 38, 0.05);
         }
 
         .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .stat-card {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            border: 2px solid rgba(0, 217, 255, 0.2);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--primary);
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            color: rgba(248, 250, 252, 0.7);
-            margin-top: 0.5rem;
-        }
-
-        /* Contact Section */
-        .contact-content {
-            max-width: 600px;
+            max-width: 1400px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
             text-align: center;
         }
 
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-top: 3rem;
+        .stat-box {
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+            border-radius: 20px;
+            transition: all 0.3s;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            font-size: 1.2rem;
-            color: rgba(248, 250, 252, 0.8);
+        .stat-box:hover {
+            transform: translateY(-5px);
+            border-color: rgba(220, 38, 38, 0.5);
         }
 
-        .contact-item span {
-            color: var(--primary);
-            font-size: 1.5rem;
+        .stat-box-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .stat-box-number {
+            font-size: 48px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #dc2626, #16a34a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .stat-box-label {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 16px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 120px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(22, 163, 74, 0.1), transparent);
+            border-radius: 50%;
+            bottom: -400px;
+            left: -400px;
+        }
+
+        .cta-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(22, 163, 74, 0.1));
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            border-radius: 30px;
+            padding: 80px 60px;
+        }
+
+        .cta-container h2 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 24px;
+        }
+
+        .cta-container p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
         }
 
         /* Footer */
         footer {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 2rem 5%;
-            text-align: center;
-            border-top: 2px solid rgba(0, 217, 255, 0.2);
+            background: rgba(13, 31, 13, 0.95);
+            border-top: 1px solid rgba(220, 38, 38, 0.3);
+            padding: 60px 40px 30px;
         }
 
-        footer p {
-            color: rgba(248, 250, 252, 0.6);
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #dc2626 0%, #16a34a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #dc2626;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .hero-content h1 {
+                font-size: 48px;
+            }
+
+            .welcome-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .owner-image-container {
+                margin: 0 auto;
+                max-width: 300px;
+            }
+
+            .courses-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
-                gap: 1.5rem;
+                display: none;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
+            .mobile-menu-btn {
+                display: block;
             }
 
-            .hero p {
-                font-size: 1.1rem;
+            .hero-content h1 {
+                font-size: 36px;
             }
 
-            h2 {
-                font-size: 2rem;
+            .hero-content p {
+                font-size: 16px;
             }
 
-            .programs-grid,
-            .gallery-grid {
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .welcome-container {
+                padding: 40px 30px;
+            }
+
+            .welcome-content h2 {
+                font-size: 28px;
+            }
+
+            .welcome-message {
+                font-size: 16px;
+            }
+
+            .section-header h2 {
+                font-size: 32px;
+            }
+
+            .courses-grid {
                 grid-template-columns: 1fr;
             }
-        }
 
-        /* Scroll animations */
-        .fade-in {
-            opacity: 0;
-            animation: fadeInUp 1s ease-out forwards;
-        }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
 
-        .fade-in:nth-child(1) { animation-delay: 0.1s; }
-        .fade-in:nth-child(2) { animation-delay: 0.2s; }
-        .fade-in:nth-child(3) { animation-delay: 0.3s; }
-        .fade-in:nth-child(4) { animation-delay: 0.4s; }
-        .fade-in:nth-child(5) { animation-delay: 0.5s; }
-        .fade-in:nth-child(6) { animation-delay: 0.6s; }
+            .cta-container {
+                padding: 60px 30px;
+            }
+
+            .cta-container h2 {
+                font-size: 32px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="container">
-            <div class="logo">Young Innovators</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#programs">Programs</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <div class="nav-container">
+            <div class="logo">🎓 OMEGA Academy</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#welcome">Welcome</a>
+                <a href="#courses">Courses</a>
+                <a href="#instructors">Instructors</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-cta">
+                <a href="#login" class="btn btn-secondary">Log In</a>
+                <a href="#signup" class="btn btn-primary">Get Started</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
         </div>
     </nav>
 
+    <!-- Welcome Section -->
+    <section class="welcome-section" id="welcome">
+        <div class="welcome-container">
+            <div class="owner-image-container">
+                <!-- Replace the emoji with your actual image by changing the div to: -->
+                <!-- <img src="your-image.jpg" alt="Emmanuel HABIRYAYO" class="owner-image"> -->
+            <div class="owner-image"><img src="image1.jpg" alt="Emmanuel HABIRYAYO" class="owner-image"></div>
+            </div>
+            <div class="welcome-content">
+                <span class="welcome-label">Message from the Founder</span>
+                <h2>Welcome to OMEGA Academy</h2>
+                <div class="welcome-message">
+                    "Intego y'u Rwanda yo kuba igicumbi cy'ikoranabuhanga mumwka 20250, izagerwaho aruko abato batojwe kandi bagakundishwa ikoranabuhanga hakiri kare,Aha rero niho intego ya Omega Training Hub Ltd ishinze. Tuzatoza umwana wawe gukunda ikoranabuhanga, atari ukurikunda gusa ahubwo no kurikora no kurikoresha!"
+                </div>
+                <div class="owner-name">
+                    — <strong>Emmanuel HABIRYAYO</strong>, Founder & CEO
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
+    <section class="hero" id="home">
+        <div class="hero-container">
             <div class="hero-content">
-                <h1>Empowering Young Minds Through Code</h1>
-                <p>At Young Innovators Center Ltd, we transform curious kids into confident creators. Through hands-on coding classes, we're building the next generation of tech leaders.</p>
-                <a href="#programs" class="cta-button">Explore Programs</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Programs Section -->
-    <section id="programs">
-        <div class="container">
-            <h2>Our Programs</h2>
-            <div class="programs-grid">
-                <div class="program-card fade-in">
-                    <div class="program-icon">💻</div>
-                    <h3>Coding Fundamentals</h3>
-                    <p>Introduction to programming concepts using visual tools like Scratch and block-based coding. Perfect for beginners aged 7-10.</p>
-                </div>
-                <div class="program-card fade-in">
-                    <div class="program-icon">🎮</div>
-                    <h3>Game Development</h3>
-                    <p>Learn to create interactive games using Python and JavaScript. Build projects you can share with friends and family.</p>
-                </div>
-                <div class="program-card fade-in">
-                    <div class="program-icon">🌐</div>
-                    <h3>Web Development</h3>
-                    <p>Master HTML, CSS, and JavaScript to build real websites. From personal pages to interactive web applications.</p>
-                </div>
-                <div class="program-card fade-in">
-                    <div class="program-icon">🤖</div>
-                    <h3>Robotics & AI</h3>
-                    <p>Explore artificial intelligence and robotics through hands-on projects. Program robots and build smart applications.</p>
-                </div>
-                <div class="program-card fade-in">
-                    <div class="program-icon">📱</div>
-                    <h3>App Development</h3>
-                    <p>Create mobile applications for iOS and Android. Turn your ideas into apps that can reach millions of users.</p>
-                </div>
-                <div class="program-card fade-in">
-                    <div class="program-icon">🏆</div>
-                    <h3>Competition Prep</h3>
-                    <p>Prepare for coding competitions and hackathons. Develop problem-solving skills and algorithmic thinking.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery">
-        <div class="container">
-            <h2>Our Learning Environment</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item fade-in">
-                    <div class="gallery-placeholder">👨‍💻</div>
-                </div>
-                <div class="gallery-item fade-in">
-                    <div class="gallery-placeholder">👩‍💻</div>
-                </div>
-                <div class="gallery-item fade-in">
-                    <div class="gallery-placeholder">🎓</div>
-                </div>
-                <div class="gallery-item fade-in">
-                    <div class="gallery-placeholder">💡</div>
-                </div>
-                <div class="gallery-item fade-in">
-                    <div class="gallery-placeholder">🚀</div>
-                </div>
-                <div class="gallery-item fade-in">
-                    <div class="gallery-placeholder">⭐</div>
-                </div>
-            </div>
-            <p style="text-align: center; margin-top: 2rem; color: rgba(248, 250, 252, 0.6);">
-                <em>Replace placeholder emojis with actual photos of your students in action!</em>
-            </p>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <div class="about-content">
-                <p>Young Innovators Center Ltd is dedicated to providing world-class coding education to young learners. We believe that every child has the potential to become a digital creator, not just a consumer.</p>
-                <p>Our experienced instructors use project-based learning to make coding fun and accessible. We focus on building not just technical skills, but also creativity, problem-solving abilities, and confidence.</p>
-                
-                <div class="stats-grid">
-                    <div class="stat-card fade-in">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Students Taught</div>
-                    </div>
-                    <div class="stat-card fade-in">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Projects Built</div>
-                    </div>
-                    <div class="stat-card fade-in">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label">Expert Instructors</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-content">
-                <p style="font-size: 1.2rem; color: rgba(248, 250, 252, 0.8); margin-bottom: 2rem;">
-                    Ready to start your child's coding journey? Contact us today to learn more about our programs and enrollment.
+                <h1>
+                    Transform Your Future with
+                    <span class="highlight">OMEGA Academy</span>
+                </h1>
+                <p>
+                    Master in-demand skills with world-class courses taught by industry experts. 
+                    Join thousands of students already advancing their careers.
                 </p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span>📧</span>
-                        <span>info@younginnovatorscenter.com</span>
+                <div class="hero-buttons">
+                    <a href="#courses" class="btn btn-primary">Explore Courses</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">45K+</div>
+                        <div class="stat-label">Active Students</div>
                     </div>
-                    <div class="contact-item">
-                        <span>📱</span>
-                        <span>+250 XXX XXX XXX</span>
+                    <div class="stat-item">
+                        <div class="stat-number">150+</div>
+                        <div class="stat-label">Expert Courses</div>
                     </div>
-                    <div class="contact-item">
-                        <span>📍</span>
-                        <span>Kigali, Rwanda</span>
+                    <div class="stat-item">
+                        <div class="stat-number">4.8★</div>
+                        <div class="stat-label">Average Rating</div>
                     </div>
                 </div>
-                <a href="mailto:info@younginnovatorscenter.com" class="cta-button" style="margin-top: 2rem;">Send Us a Message</a>
             </div>
+            <div class="hero-visual">
+                <div class="course-cards-float">
+                    <div class="float-card">
+                        <div class="float-card-icon">💻</div>
+                        <h3>Web Development</h3>
+                        <p>12,500+ enrolled</p>
+                    </div>
+                    <div class="float-card">
+                        <div class="float-card-icon">🎨</div>
+                        <h3>UI/UX Design</h3>
+                        <p>15,200+ enrolled</p>
+                    </div>
+                    <div class="float-card">
+                        <div class="float-card-icon">🐍</div>
+                        <h3>Data Science</h3>
+                        <p>9,870+ enrolled</p>
+                    </div>
+                    <div class="float-card">
+                        <div class="float-card-icon">📱</div>
+                        <h3>Digital Marketing</h3>
+                        <p>8,420+ enrolled</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section class="featured-section" id="courses">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Featured Courses</h2>
+                <p>Start learning from our most popular courses</p>
+            </div>
+            <div class="courses-grid" id="coursesGrid">
+                <!-- Courses will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-box-icon">🎓</div>
+                <div class="stat-box-number">45,990</div>
+                <div class="stat-box-label">Happy Students</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-box-icon">📚</div>
+                <div class="stat-box-number">150+</div>
+                <div class="stat-box-label">Quality Courses</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-box-icon">👨‍🏫</div>
+                <div class="stat-box-number">50+</div>
+                <div class="stat-box-label">Expert Instructors</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-box-icon">⭐</div>
+                <div class="stat-box-number">4.8</div>
+                <div class="stat-box-label">Average Rating</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2>Ready to Start Learning?</h2>
+            <p>Join thousands of students already transforming their careers with OMEGA Academy</p>
+            <a href="#signup" class="btn btn-primary" style="font-size: 16px; padding: 16px 40px;">
+                Get Started Today →
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Young Innovators Center Ltd. All rights reserved. Building the future, one line of code at a time.</p>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>🎓 OMEGA Academy</h3>
+                <p>Empowering learners worldwide with high-quality education and expert-led courses. Transform your future, one course at a time.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#press">Press</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#help">Help Center</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Learning</h4>
+                <ul>
+                    <li><a href="#courses">All Courses</a></li>
+                    <li><a href="#instructors">Instructors</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#become-instructor">Teach on OMEGA</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 OMEGA Academy. All rights reserved. Built with ❤️ for learners worldwide.</p>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Featured courses data
+        const courses = [
+            {
+                id: 1,
+                title: "Complete Web Development Bootcamp",
+                description: "Master HTML, CSS, JavaScript, React, Node.js and become a full-stack developer",
+                category: "Development",
+                level: "Beginner",
+                instructor: "Sarah Johnson",
+                price: "$89.99",
+                icon: "💻",
+                students: 12500
+            },
+            {
+                id: 2,
+                title: "UI/UX Design Fundamentals",
+                description: "Learn to design beautiful, user-friendly interfaces and experiences",
+                category: "Design",
+                level: "Beginner",
+                instructor: "Emmanuel HABIRYAYO",
+                price: "Free",
+                icon: "🎨",
+                students: 15200
+            },
+            {
+                id: 3,
+                title: "Python for Data Science",
+                description: "Master Python programming and data analysis for a career in data science",
+                category: "Data Science",
+                level: "Intermediate",
+                instructor: "Emmanuel HABIRYAYO",
+                price: "$94.99",
+                icon: "🐍",
+                students: 9870
+            },
+            {
+                id: 4,
+                title: "Advanced React & Redux",
+                description: "Build scalable React applications with modern state management",
+                category: "Development",
+                level: "Advanced",
+                instructor: "Mike Chen",
+                price: "$79.99",
+                icon: "⚛️",
+                students: 8420
+            },
+            {
+                id: 5,
+                title: "Digital Marketing Masterclass",
+                description: "Learn SEO, social media marketing, content strategy and analytics",
+                category: "Marketing",
+                level: "Beginner",
+                instructor: "Emmanuel HABIRYAYO",
+                price: "$69.99",
+                icon: "📱",
+                students: 7350
+            },
+            {
+                id: 6,
+                title: "Machine Learning A-Z",
+                description: "Understand machine learning algorithms and build AI applications",
+                category: "Data Science",
+                level: "Advanced",
+                instructor: "Dr. Alex Kumar",
+                price: "$99.99",
+                icon: "🤖",
+                students: 6890
+            }
+        ];
+
+        // Render courses
+        function renderCourses() {
+            const grid = document.getElementById('coursesGrid');
+            grid.innerHTML = courses.map(course => `
+                <div class="course-card" onclick="viewCourse(${course.id})">
+                    <div class="course-thumbnail">
+                        ${course.icon}
+                    </div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="meta-badge">${course.category}</span>
+                            <span class="meta-badge">${course.level}</span>
+                        </div>
+                        <h3>${course.title}</h3>
+                        <p>${course.description}</p>
+                        <div class="course-footer">
+                            <div class="course-instructor">
+                                <span>👨‍🏫</span>
+                                <span>${course.instructor}</span>
+                            </div>
+                            <div class="course-price ${course.price === 'Free' ? 'free' : ''}">
+                                ${course.price}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function viewCourse(id) {
+            alert(`Course details page for course #${id} - Coming soon!`);
+        }
+
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -624,24 +1070,23 @@
             });
         });
 
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
+        // Initialize
+        renderCourses();
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
+        // Add scroll effect to nav
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                nav.style.padding = '15px 0';
+            } else {
+                nav.style.padding = '20px 0';
+            }
+            
+            lastScroll = currentScroll;
         });
     </script>
 </body>
-
 </html>
